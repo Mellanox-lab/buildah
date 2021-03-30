@@ -1,0 +1,94 @@
+Source: golang-github-containers-buildah
+Section: devel
+Priority: optional
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Reinhard Tartler <siretart@tauware.de>,
+           Dmitry Smirnov <onlyjob@debian.org>,
+Build-Conflicts: golang-github-dnephin-cobra-dev
+Build-Depends: debhelper-compat (= 12), bash-completion,
+               dh-golang,
+               golang-any,
+    golang-github-containers-image-dev (>= 4.0),
+    golang-github-containers-storage-dev (>= 1.5.18),
+    golang-github-pkg-errors-dev,
+    golang-github-seccomp-containers-golang-dev,
+    golang-github-seccomp-libseccomp-golang-dev,
+    golang-github-sirupsen-logrus-dev,
+    golang-github-spf13-cobra-dev,
+    golang-github-spf13-pflag-dev,
+    golang-gocapability-dev,
+    golang-golang-x-crypto-dev,
+    golang-golang-x-sys-dev,
+    golang-gomega-dev,
+    go-md2man,
+    libapparmor-dev,
+    libostree-dev,
+    libseccomp-dev,
+    libselinux1-dev,
+Standards-Version: 4.5.1
+Homepage: https://github.com/containers/buildah
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-containers-buildah
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-containers-buildah.git
+XS-Go-Import-Path: github.com/containers/buildah
+Testsuite: autopkgtest-pkg-go
+
+Package: buildah
+Architecture: any
+Built-Using: ${misc:Built-Using}
+Depends: uidmap,
+         golang-github-containers-common (>> 0.26.3+ds1-3~~),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: fuse-overlayfs (<< 0.7.1)
+Recommends: ${misc:Recommends},
+    fuse-overlayfs (>= 0.7.1~),
+    crun | runc,
+Suggests: containers-storage
+Description: CLI tool to facilitate building OCI images
+ The Buildah package provides a command line tool that can be used to
+   - create a working container, either from scratch or using an image as a
+     starting point
+   - create an image, either from a working container or via the
+     instructions in a Dockerfile
+   - images can be built in either the OCI image format or the traditional
+     upstream docker image format
+   - mount a working container's root filesystem for manipulation
+   - unmount a working container's root filesystem
+   - use the updated contents of a container's root filesystem as a
+     filesystem layer to create a new image
+   - delete a working container or an image
+   - rename a local container
+ .
+ This package contains the buildah command-line utility and provides an
+ interface similar to the 'docker' command.
+
+Package: golang-github-containers-buildah-dev
+Architecture: all
+Depends: ${misc:Depends},
+    golang-github-appc-cni-dev (>= 0.7.0~~),
+    golang-github-docker-docker-dev (>= 19.03.4~),
+#       golang-github-docker-distribution-dev,
+    golang-github-pkg-errors-dev,
+    golang-github-seccomp-containers-golang-dev,
+    golang-github-seccomp-libseccomp-golang-dev,
+    golang-gocapability-dev,
+    golang-golang-x-crypto-dev,
+    golang-golang-x-sys-dev,
+    golang-gomega-dev,
+Description: tool to facilitate building OCI images
+ The Buildah package provides a command line tool that can be used to
+   - create a working container, either from scratch or using an image as a
+     starting point
+   - create an image, either from a working container or via the
+     instructions in a Dockerfile
+   - images can be built in either the OCI image format or the traditional
+     upstream docker image format
+   - mount a working container's root filesystem for manipulation
+   - unmount a working container's root filesystem
+   - use the updated contents of a container's root filesystem as a
+     filesystem layer to create a new image
+   - delete a working container or an image
+   - rename a local container
+ .
+ This package contains golang sources that other package may require for
+ building.

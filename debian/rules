@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+# We want to ship only the library packages themselves in the go source, not
+# the accompanying test scripts
+export DH_GOLANG_EXCLUDES := tests/
+export DH_GOLANG_EXCLUDES_ALL := 1
+export DH_VERBOSE := 1
+
+override_dh_auto_configure:
+	# force debhelper to symlink subdirs in docker, enables workarounds below
+	mkdir -p _build/src/github.com/docker _build/src/github.com/seccomp
+	dh_auto_configure
+	# workaround some vendoring issues - in ubuntu all docker vendored libraries
+	# are installed in the "vendor/" subdirectory
+	test -d _build/src/github.com/docker/libnetwork || \
+	  ln -s docker/vendor/github.com/docker/libnetwork \
+	     _build/src/github.com/docker
+	test -d _build/src/github.com/seccomp/libseccomp-golang || \
+	  ln -s ../docker/docker/vendor/github.com/seccomp/libseccomp-golang \
+	  _build/src/github.com/seccomp
+
+override_dh_auto_build: $(MANPAGES) $(MANPAGES5)
+	dh_auto_build -- -tags "seccomp selinux apparmor containers_image_ostree"
+	make -C docs docs GOMD2MAN=go-md2man
+	make -C docs install PREFIX=/usr DESTDIR=$(CURDIR)/debian/tmp
+
+override_dh_auto_test:
+	# TODO: Investigate how to get the tests to pass
+
+%:
+	dh $@ --buildsystem=golang --with=golang,bash-completion --builddirectory=_build

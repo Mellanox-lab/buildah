@@ -1,0 +1,263 @@
+golang-github-containers-buildah (1.20.0+mlnx1-1) unstable; urgency=medium
+
+  * New upstream version of buildah 1.20.0
+
+  - Yurii Shestakov <yuriis@nvidia.com>  Tue, 30 Mar 2021 23:59:00 +0300
+
+golang-github-containers-buildah (1.19.6+dfsg1-1) unstable; urgency=medium
+
+  * New upstream version targeted at podman 3.0
+  * remove 2993.patch, merged upstream
+
+ -- Reinhard Tartler <siretart@tauware.de>  Tue, 23 Feb 2021 07:10:49 -0500
+
+golang-github-containers-buildah (1.19.4+dfsg1-3) unstable; urgency=medium
+
+  * Upload to unstable to pickup fix that closes: #982467
+  * Revert "Tighten dependencies on containers/{storage,image,common}"
+
+ -- Reinhard Tartler <siretart@tauware.de>  Fri, 12 Feb 2021 06:38:06 -0500
+
+golang-github-containers-buildah (1.19.4+dfsg1-2) experimental; urgency=medium
+
+  * Cherry-pick upstream patch: Fix caching layers with build args
+
+ -- Reinhard Tartler <siretart@tauware.de>  Wed, 10 Feb 2021 12:59:27 -0500
+
+golang-github-containers-buildah (1.19.4+dfsg1-1) experimental; urgency=medium
+
+  * New upstream version 1.19.4+dfsg1
+  * Tighten dependencies on containers/{storage,image,common}
+  * drop 2967.patch, merged upstream
+
+ -- Reinhard Tartler <siretart@tauware.de>  Tue, 09 Feb 2021 22:02:12 -0500
+
+golang-github-containers-buildah (1.19.3+dfsg1-2) unstable; urgency=medium
+
+  * Unbreak image caching (Closes: #981849)
+  * buildah: Add critical comma in Depends
+  * Revert "Disabled "Testsuite: autopkgtest-pkg-go"
+
+ -- Reinhard Tartler <siretart@tauware.de>  Fri, 05 Feb 2021 13:42:07 -0500
+
+golang-github-containers-buildah (1.19.3+dfsg1-1) unstable; urgency=medium
+
+  * Upload to unstable
+  * New upstream version 1.19.3+dfsg1
+
+ -- Reinhard Tartler <siretart@tauware.de>  Tue, 02 Feb 2021 10:07:24 -0500
+
+golang-github-containers-buildah (1.19.2+dfsg1-2) experimental; urgency=medium
+
+  * No longer provide policy.json, moved to containers/common
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sat, 30 Jan 2021 15:44:52 -0500
+
+golang-github-containers-buildah (1.19.2+dfsg1-1) experimental; urgency=medium
+
+  * New upstream version 1.19.2+dfsg1
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sun, 24 Jan 2021 09:07:37 -0500
+
+golang-github-containers-buildah (1.18.0+dfsg1-3) unstable; urgency=medium
+
+  * No longer provide policy.json, moved to containers/common
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sat, 30 Jan 2021 10:33:21 -0500
+
+golang-github-containers-buildah (1.18.0+dfsg1-2) unstable; urgency=medium
+
+  * Upload to unstable
+  * explicitly depend on golang-github-seccomp-libseccomp-golang-dev
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sat, 23 Jan 2021 18:31:09 -0500
+
+golang-github-containers-buildah (1.18.0+dfsg1-1) experimental; urgency=medium
+
+  * debian/control: add dep on golang-github-konsorten-go-windows-terminal-sequences-dev
+  * no longer install sample registries.conf
+  * Fix manpage installation
+  * dropping unused patch
+  * Bump standards-version, no changes needed
+  * New upstream version 1.18.0+dfsg1
+
+ -- Reinhard Tartler <siretart@tauware.de>  Tue, 08 Dec 2020 15:06:53 -0500
+
+golang-github-containers-buildah (1.17.1+dfsg1-1) experimental; urgency=medium
+
+  * New upstream version 1.17.1+dfsg1
+
+ -- Reinhard Tartler <siretart@tauware.de>  Mon, 30 Nov 2020 15:54:11 -0500
+
+golang-github-containers-buildah (1.16.6+dfsg1-2) unstable; urgency=medium
+
+  * Fix manpage installation (Closes: #977515)
+  * no longer install sample registries.conf
+  * Bump standards-version, no changes needed
+
+ -- Reinhard Tartler <siretart@tauware.de>  Tue, 15 Dec 2020 22:33:30 -0500
+
+golang-github-containers-buildah (1.16.6+dfsg1-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository, Repository-Browse.
+
+  [ Reinhard Tartler ]
+  * Bump standards version, no changes needed
+  * debian/changelog: upate
+  * debian/watch: update to match containers/storage
+  * debian/control: tighten dependencies
+  * debian/copyright: update using cme update dpkg-copyright
+  * New upstream version 1.16.6+dfsg1
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sun, 22 Nov 2020 17:16:10 -0500
+
+golang-github-containers-buildah (1.15.2-1) unstable; urgency=medium
+
+  * New upstream version 1.15.2
+  * Bump standards version, no changes needed
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sat, 12 Sep 2020 15:29:43 -0400
+
+golang-github-containers-buildah (1.15.0-8) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+
+ -- Shengjing Zhu <zhsj@debian.org>  Sun, 23 Aug 2020 02:33:58 +0800
+
+golang-github-containers-buildah (1.15.0-7) experimental; urgency=medium
+
+  * Team upload.
+  * Fix build with latest runtime spec
+
+ -- Shengjing Zhu <zhsj@debian.org>  Wed, 19 Aug 2020 02:08:37 +0800
+
+golang-github-containers-buildah (1.15.0-6) unstable; urgency=medium
+
+  * Add missing hunk to ftbfs-mips.patch
+
+ -- Reinhard Tartler <siretart@tauware.de>  Thu, 30 Jul 2020 07:18:24 -0400
+
+golang-github-containers-buildah (1.15.0-5) unstable; urgency=medium
+
+  * Add patch to unbreak build on mips
+
+ -- Reinhard Tartler <siretart@tauware.de>  Tue, 21 Jul 2020 10:11:45 -0400
+
+golang-github-containers-buildah (1.15.0-4) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Reinhard Tartler <siretart@tauware.de>  Mon, 20 Jul 2020 10:05:11 -0400
+
+golang-github-containers-buildah (1.15.0-3) experimental; urgency=medium
+
+  * golang-github-containers-buildah-dev: Depend on containers/common
+
+ -- Reinhard Tartler <siretart@tauware.de>  Wed, 15 Jul 2020 07:12:06 -0400
+
+golang-github-containers-buildah (1.15.0-2) experimental; urgency=medium
+
+  * Build Depend against golang-github-containers-common-dev
+  * Install sample registries.conf (Closes: #961497)
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sun, 12 Jul 2020 21:31:38 -0400
+
+golang-github-containers-buildah (1.15.0-1) experimental; urgency=medium
+
+  * New upstream version
+  * Add Build-Depends:
+    - golang-github-containers-ocicrypt-dev
+    - golang-github-cyphar-filepath-securejoin-dev
+    - golang-github-ishidawataru-sctp-dev
+  * Temporarily add containers/common as a local patch
+
+ -- Reinhard Tartler <siretart@tauware.de>  Fri, 10 Jul 2020 19:41:12 -0400
+
+golang-github-containers-buildah (1.11.6-2) unstable; urgency=medium
+
+  * buildah: Replace Conflicts on fuse-overlayfs with Breaks relationship
+  * Add upstream patch to fix file traversal flaw
+    Fixes: CVE-2020-10696
+
+ -- Reinhard Tartler <siretart@tauware.de>  Wed, 15 Jul 2020 07:30:26 -0400
+
+golang-github-containers-buildah (1.11.6-1) unstable; urgency=medium
+
+  * New upstream release.
+  * DH to version 12.
+  * (Build-)Depends:
+    - golang-github-boltdb-bolt-dev
+    + golang-github-coreos-bbolt-dev (>= 1.3.3~)
+    - golang-github-containerd-continuity-dev
+    = golang-github-containers-image-dev (>= 5.0.0~)
+    + golang-github-openshift-api-dev
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Fri, 03 Jan 2020 07:58:54 +1100
+
+golang-github-containers-buildah (1.10.1-6) unstable; urgency=medium
+
+  * Install "policy.json" conf file and the corresponding man page.
+  * Install "containers/image" man pages (Closes: #947007).
+  * Patch registries.conf to mention its man page.
+  * Suggests += "containers-storage".
+    (provides containers-storage.conf(5) and other man pages).
+  * Recommends += "crun | runc".
+  * Tightened "fuse-overlayfs" dependency.
+  * README.Debian: added "Troubleshooting rootless mode" note.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sun, 29 Dec 2019 19:26:18 +1100
+
+golang-github-containers-buildah (1.10.1-5) unstable; urgency=medium
+
+  * Install bash completions.
+  * Enabled "ostree" storage.
+  * Build with all security features (seccomp, selinux, apparmor).
+  * (Build-)Depends:
+    + bash-completion
+    + golang-github-seccomp-containers-golang-dev
+    + libapparmor-dev
+    + libostree-dev
+    + libselinux1-dev
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Mon, 02 Dec 2019 22:00:19 +1100
+
+golang-github-containers-buildah (1.10.1-4) unstable; urgency=medium
+
+  * Recommends += "fuse-overlayfs".
+  * Removed "golang-github-docker-distribution-dev" from (Build-)Depends.
+  * Disabled "Testsuite: autopkgtest-pkg-go" which is confused by man
+    pages...
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sun, 01 Dec 2019 04:41:25 +1100
+
+golang-github-containers-buildah (1.10.1-3) unstable; urgency=medium
+
+  * Install docs and examples.
+  * Build and install man pages (with spelling and section corrections).
+  * Tightened versioned dependency on Docker.
+  * Use non-transitional "logrus" package.
+  * Corrected short package description.
+  * Standards-Version: 4.4.1.
+  * Added myself to Uploaders.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Mon, 11 Nov 2019 15:44:08 +1100
+
+golang-github-containers-buildah (1.10.1-2) unstable; urgency=medium
+
+  * Uploda to unstable
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sun, 10 Nov 2019 10:41:43 -0500
+
+golang-github-containers-buildah (1.10.1-1) experimental; urgency=medium
+
+  * New upstream version
+
+ -- Reinhard Tartler <siretart@tauware.de>  Mon, 21 Oct 2019 08:17:37 -0400
+
+golang-github-containers-buildah (1.7.2-1) experimental; urgency=medium
+
+  * Initial release (Closes: #928083)
+
+ -- Reinhard Tartler <siretart@tauware.de>  Mon, 21 Oct 2019 08:17:01 -0400
